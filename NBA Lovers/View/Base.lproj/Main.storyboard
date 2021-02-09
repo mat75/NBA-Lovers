@@ -74,12 +74,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CL-Jg-Mqg">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CL-Jg-Mqg" customClass="TeamsTopView" customModule="NBA_Lovers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOSTON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpH-gu-pOe">
+                                        <rect key="frame" x="21" y="17" width="372" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="SUD-0Y-8CJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="West Conference" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-JT-mGO">
+                                        <rect key="frame" x="21" y="75" width="372" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="Cvd-Fn-bbZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
+                                    <constraint firstItem="OpH-gu-pOe" firstAttribute="leading" secondItem="4CL-Jg-Mqg" secondAttribute="leading" constant="21" id="5fI-Qr-txu"/>
+                                    <constraint firstItem="kkj-JT-mGO" firstAttribute="leading" secondItem="4CL-Jg-Mqg" secondAttribute="leading" constant="21" id="FSN-ez-0db"/>
+                                    <constraint firstItem="OpH-gu-pOe" firstAttribute="top" secondItem="4CL-Jg-Mqg" secondAttribute="top" constant="17" id="R1W-cN-FlX"/>
+                                    <constraint firstAttribute="trailing" secondItem="OpH-gu-pOe" secondAttribute="trailing" constant="21" id="WVo-q3-Dtu"/>
                                     <constraint firstAttribute="height" constant="146" id="ggr-n4-Wf2"/>
+                                    <constraint firstAttribute="trailing" secondItem="kkj-JT-mGO" secondAttribute="trailing" constant="21" id="oLT-Hx-pHV"/>
+                                    <constraint firstItem="kkj-JT-mGO" firstAttribute="top" secondItem="OpH-gu-pOe" secondAttribute="bottom" constant="15" id="tnM-Ut-elV"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="cityTeam" destination="OpH-gu-pOe" id="e3o-mE-ecZ"/>
+                                    <outlet property="teamConference" destination="kkj-JT-mGO" id="zB1-Ms-yGd"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yfv-5C-oDc" customClass="CustomTableView" customModule="NBA_Lovers">
                                 <rect key="frame" x="0.0" y="143" width="414" height="613"/>

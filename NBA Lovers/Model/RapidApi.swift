@@ -36,6 +36,7 @@ class RapidApi: NSObject {
             }
         }
     }
+    
     //returns an array with all players data
     func loadPlayersData(completion: @escaping (_ error:Error?, _ playerData:PlayerData?) -> ()){
         let rest = RestManager()
@@ -58,35 +59,45 @@ class RapidApi: NSObject {
         }
     }
     
-    func loadPlayers(team:Team, pages: Int?, completion: @escaping (_ error:Error?, _ players:[Player]) -> ()){
+    func loadPlayersWithConcurrentCalls(team:Team, completion: @escaping (_ error:Error?, _ players:[Player]) -> ()){
+        //Create a dispatch queue
         var players = [Player]()
-        let rest = RestManager()
-        for (key, value) in headers {
-            rest.requestHttpHeaders.add(value: value, forKey: key)
-        }
-        //loop thought the API pages this is o(n) but the API is really badly designed as teams doesen't have an array with the players
-        for page in 1..<pages! {
-            rest.makeRequest(withEndPoint: "players?per_page=100&page=\(page)", withHttpMethod: .get) { (result) in
-                guard let response = result.response else {return}
-                if response.httpStatusCode == 200 {
-                    guard let data = result.data else {return}
-                    print(data.printJSON())
-                    let decoder = JSONDecoder()
-                    guard let playerResult = try? decoder.decode(PlayerData.self, from: data) else { return }
-                    for player in playerResult.data {
-                        DispatchQueue.main.async {
-                            if player.team?.abbreviation == team.abbreviation {
-                                players.append(player)
-                            }
+        var playerData:PlayerData?
+        self.loadPlayersData { (error, data) in
+            if error != nil{
+                print(error.debugDescription)
+            }else{
+                guard let data = data else {return}
+                playerData = data
+            }
+            let rest = RestManager()
+            for (key, value) in self.headers {
+                rest.requestHttpHeaders.add(value: value, forKey: key)
+            }
+            //added semaphore and backgroundQueue to manage multiple api calls
+            let backgroundQueue = DispatchQueue(label: "requests")
+            let semaphore = DispatchSemaphore(value: 1)
+
+            backgroundQueue.async {
+                for page in 1..<playerData!.meta.total_pages! {
+                    semaphore.wait()
+                    rest.makeRequest(withEndPoint: "players?per_page=100&page=\(page)", withHttpMethod: .get) { (result) in
+                        guard let response = result.response else {return}
+                        if response.httpStatusCode == 200 {
+                            guard let data = result.data else {return}
+                            let decoder = JSONDecoder()
+                            guard let playerResult = try? decoder.decode(PlayerData.self, from: data) else { return }
+                            players.append(contentsOf: playerResult.data)
+                                semaphore.signal()
+                        }else{
+                            print(response.httpStatusCode)
+                            completion(error,[])
                         }
+                        completion(nil,players)
                     }
-                }else{
-                    guard let error = result.error else {return}
-                    completion(error, [])
                 }
-                completion(nil, players)
             }
         }
     }
-    
+
 }

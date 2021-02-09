@@ -8,9 +8,9 @@
 import UIKit
 
 class PlayersTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var playerPositionLabel: UILabel!
-    
     @IBOutlet weak var conteiningView: UIView!
     
     override func awakeFromNib() {
@@ -18,8 +18,6 @@ class PlayersTableViewCell: UITableViewCell {
         self.backgroundColor = .dirtyWhite
         self.playerNameLabel.textColor = .nbaDarkGray
         self.playerPositionLabel.layer.cornerRadius = 24
-
-
     }
     
     override func layoutSubviews() {
@@ -33,7 +31,6 @@ class PlayersTableViewCell: UITableViewCell {
         self.conteiningView.layer.shadowOffset = CGSize(width: 0, height: 3)
         self.conteiningView.layer.shadowOpacity = 0.25
         self.conteiningView.layer.shadowPath = shadowPath.cgPath
-     
     }
     
     func setupPlayer(player:Player){

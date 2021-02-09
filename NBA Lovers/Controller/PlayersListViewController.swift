@@ -8,44 +8,41 @@
 import UIKit
 
 class PlayersListViewController: UIViewController {
-    
     var team:Team?
     var playersArray = [Player]()
-    @IBOutlet var tableView: CustomTableView!
+    @IBOutlet var tableView: UITableView!
     var selectedPlayer:Player?
+    var activityIndicator:UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView()
+        ai.translatesAutoresizingMaskIntoConstraints = false
+        ai.hidesWhenStopped = true
+        ai.color = .systemIndigo
+        return ai
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = team?.name
-        self.tableView.refreshIndicator.addTarget(self, action: #selector(loadPlayers), for: .valueChanged)
-
         setupTableView()
     }
     
     //load all teams from API
     @objc func loadPlayers(){
-        self.tableView.activityIndicator.startAnimating()
-        self.tableView.messageLabel.text = "Loading players..."
-        RapidApi.shared.loadPlayersData { (error, playerData) in
-            if error == nil {
-                self.playersArray = []
-                if let pages = playerData?.meta.total_pages{
-                    RapidApi.shared.loadPlayers(team: self.team! ,pages: pages) { (error, players) in
-                        if error == nil {
-                            DispatchQueue.main.async {
-                                self.playersArray = players
-                                self.tableView.activityIndicator.stopAnimating()
-                                self.tableView.refreshIndicator.endRefreshing()
-
-                                self.tableView.reloadData()
-                            }
-                        }else{
-                            print(error!.localizedDescription)
-                        }
-                    }
+        self.activityIndicator.startAnimating()
+        RapidApi.shared.loadPlayersWithConcurrentCalls(team: team!) { (error, player) in
+            if error != nil {
+                // there is an error
+                print(error.debugDescription)
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.tableView.reloadData()
                 }
             }else{
-                print(error!.localizedDescription)
+                DispatchQueue.main.async {
+                    self.playersArray = player.filter({$0.team?.abbreviation == self.team?.abbreviation })
+                    self.activityIndicator.stopAnimating()
+                    self.tableView.reloadData()
+                }
             }
         }
     }
@@ -57,12 +54,17 @@ class PlayersListViewController: UIViewController {
     
     //setup table view programatically
     func setupTableView(){
+        self.tableView.refreshControl?.removeFromSuperview()
         self.tableView.register(UINib(nibName: K.playerCellNibName, bundle: nil), forCellReuseIdentifier: K.playerellIdentifier)
         self.tableView.register(CustomTableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: CustomTableViewHeaderFooterView.reuseIdentifer)
-
         self.tableView.backgroundColor = .dirtyWhite
         self.tableView.estimatedRowHeight = 60
         self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.addSubview(activityIndicator)
+        activityIndicator.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: self.tableView.centerYAnchor).isActive = true
+        activityIndicator.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        activityIndicator.widthAnchor.constraint(equalToConstant: 20).isActive = true
     }
 }
 
@@ -90,14 +92,14 @@ extension PlayersListViewController : UITableViewDelegate {
             return nil }
         header.tintColor = .dirtyWhite
         header.customLabel.textColor = .systemIndigo
-            header.customLabel.text = "Team Players"
-            return header
+        header.customLabel.text = "Team Players"
+        return header
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-           return 40
-       }
-
+        return 40
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedPlayer = self.playersArray[indexPath.row]
         self.performSegue(withIdentifier: K.SegueIdentifier.playerSegue, sender: self)

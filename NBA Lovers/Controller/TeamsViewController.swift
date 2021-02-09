@@ -71,7 +71,6 @@ extension TeamsViewController : UITableViewDataSource {
 //MARK: - table view delegate
 extension TeamsViewController : UITableViewDelegate {
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let team = self.teamsArray[indexPath.row]
         self.selectedTeam = team
@@ -86,6 +85,3 @@ extension TeamsViewController : UITableViewDelegate {
         }
     }
 }
-
-
-

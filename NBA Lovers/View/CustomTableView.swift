@@ -2,6 +2,7 @@ import UIKit
 
 class CustomTableView: UITableView {
     
+    var addRefreshIndicator = true
     var refreshIndicator : UIRefreshControl =  {
         let rc = UIRefreshControl()
         return rc
@@ -10,8 +11,8 @@ class CustomTableView: UITableView {
     var refreschIndicationMessage = "Loading..." {
         didSet {
             let attrs = [
-                     NSAttributedString.Key.foregroundColor: UIColor.gray ,
-                     NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 15)!]
+                NSAttributedString.Key.foregroundColor: UIColor.gray ,
+                NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 15)!]
             refreshIndicator.attributedTitle = NSAttributedString(string: refreschIndicationMessage, attributes: attrs)
         }
     }
@@ -23,7 +24,7 @@ class CustomTableView: UITableView {
         ai.color = .systemIndigo
         return ai
     }()
-           
+    
     var messageLabel:UILabel = {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +38,6 @@ class CustomTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         setupViews()
-
     }
     
     required init?(coder: NSCoder) {
@@ -45,8 +45,6 @@ class CustomTableView: UITableView {
         setupViews()
     }
     
-    
- 
     func setupViews(){
         sectionIndexBackgroundColor = .clear
         self.backgroundColor = .clear
@@ -63,19 +61,18 @@ class CustomTableView: UITableView {
         messageLabel.bottomAnchor.constraint(equalTo: self.activityIndicator.topAnchor).isActive = true
         messageLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
         messageLabel.widthAnchor.constraint(equalToConstant: 200 ).isActive = true
-    
+        
         if #available(iOS 10.0, *) {
             refreshControl = refreshIndicator
-             } else {
+        } else {
             addSubview(refreshIndicator)
-            }
-             refreshIndicator.tintColor = .white
-             
-             let attrs = [
-                 NSAttributedString.Key.foregroundColor: UIColor.gray ,
-                 NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 15)!]
-                refreshIndicator.attributedTitle = NSAttributedString(string: refreschIndicationMessage, attributes: attrs)
-            
-    }
+        }
+        refreshIndicator.tintColor = .white
 
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.gray ,
+            NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 15)!]
+        refreshIndicator.attributedTitle = NSAttributedString(string: refreschIndicationMessage, attributes: attrs)
+        
+    }
 }
