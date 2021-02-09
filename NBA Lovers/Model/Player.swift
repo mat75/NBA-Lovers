@@ -16,12 +16,13 @@ struct Player : Decodable {
     var last_name:String?
     var height_feet:Int?
     var height_inches:Int?
+    var weight_pounds:Int?
     var position:String?
     var team:Team?
 }
 
 struct MetaDataPlayer : Decodable {
-    var total_pages:Int?
+    var total_pages:Int? // needed to loop through all pages of the API
     var current_page:Int?
     var next_page:Int?
     var per_page:Int?

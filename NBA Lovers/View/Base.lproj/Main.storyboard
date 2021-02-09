@@ -16,7 +16,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2pr-k8-d6O">
+                            <view contentMode="scaleToFill" id="iAp-Ll-Av0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SMz-jj-6dY" customClass="CustomTableView" customModule="NBA_Lovers">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="fFs-Dy-K4G" id="0JP-j8-3uk"/>
+                                            <outlet property="delegate" destination="fFs-Dy-K4G" id="q7x-CD-ATi"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="CwN-Io-5bM"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="SMz-jj-6dY" firstAttribute="top" secondItem="CwN-Io-5bM" secondAttribute="top" id="5cV-rb-p34"/>
+                                    <constraint firstItem="CwN-Io-5bM" firstAttribute="bottom" secondItem="SMz-jj-6dY" secondAttribute="bottom" id="mWy-nc-TNT"/>
+                                    <constraint firstItem="CwN-Io-5bM" firstAttribute="trailing" secondItem="SMz-jj-6dY" secondAttribute="trailing" id="rQ1-ct-eu4"/>
+                                    <constraint firstItem="SMz-jj-6dY" firstAttribute="leading" secondItem="CwN-Io-5bM" secondAttribute="leading" id="sZQ-Db-evB"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2pr-k8-d6O" customClass="CustomTableView" customModule="NBA_Lovers">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -53,14 +75,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CL-Jg-Mqg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="222"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="222" id="Zf3-Ur-T2M"/>
+                                    <constraint firstAttribute="height" constant="146" id="ggr-n4-Wf2"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yfv-5C-oDc">
-                                <rect key="frame" x="0.0" y="220" width="414" height="536"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yfv-5C-oDc" customClass="CustomTableView" customModule="NBA_Lovers">
+                                <rect key="frame" x="0.0" y="143" width="414" height="613"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="b38-f2-grV" id="zMx-So-F8o"/>
@@ -71,13 +93,13 @@
                         <viewLayoutGuide key="safeArea" id="NPn-rd-2iD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yfv-5C-oDc" firstAttribute="top" secondItem="mh5-jx-Yr7" secondAttribute="top" constant="220" id="1C7-0A-dbK"/>
-                            <constraint firstItem="4CL-Jg-Mqg" firstAttribute="trailing" secondItem="yfv-5C-oDc" secondAttribute="trailing" id="O60-DH-D0m"/>
-                            <constraint firstItem="yfv-5C-oDc" firstAttribute="trailing" secondItem="NPn-rd-2iD" secondAttribute="trailing" id="RHo-Nu-rKf"/>
-                            <constraint firstItem="yfv-5C-oDc" firstAttribute="leading" secondItem="NPn-rd-2iD" secondAttribute="leading" id="SVj-NM-3ie"/>
-                            <constraint firstItem="4CL-Jg-Mqg" firstAttribute="top" secondItem="NPn-rd-2iD" secondAttribute="top" id="euz-Yn-opn"/>
-                            <constraint firstItem="4CL-Jg-Mqg" firstAttribute="leading" secondItem="NPn-rd-2iD" secondAttribute="leading" id="foS-1Q-fbu"/>
-                            <constraint firstAttribute="bottom" secondItem="yfv-5C-oDc" secondAttribute="bottom" id="oGO-Ju-tIb"/>
+                            <constraint firstAttribute="bottom" secondItem="yfv-5C-oDc" secondAttribute="bottom" id="LNj-gV-iiN"/>
+                            <constraint firstItem="yfv-5C-oDc" firstAttribute="top" secondItem="4CL-Jg-Mqg" secondAttribute="bottom" constant="-3" id="SAN-pX-NqV"/>
+                            <constraint firstItem="4CL-Jg-Mqg" firstAttribute="leading" secondItem="NPn-rd-2iD" secondAttribute="leading" id="ez6-vT-fET"/>
+                            <constraint firstItem="yfv-5C-oDc" firstAttribute="leading" secondItem="NPn-rd-2iD" secondAttribute="leading" id="p27-vp-znK"/>
+                            <constraint firstItem="4CL-Jg-Mqg" firstAttribute="top" secondItem="mh5-jx-Yr7" secondAttribute="top" id="snB-Gi-9Oj"/>
+                            <constraint firstItem="yfv-5C-oDc" firstAttribute="trailing" secondItem="4CL-Jg-Mqg" secondAttribute="trailing" id="u7c-PQ-2Zt"/>
+                            <constraint firstItem="4CL-Jg-Mqg" firstAttribute="trailing" secondItem="NPn-rd-2iD" secondAttribute="trailing" id="ueo-PR-pru"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3yZ-IU-T4I"/>
@@ -88,6 +110,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wql-Im-gyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1960.8695652173915" y="-200.22321428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gSn-Li-Aru">
+            <objects>
+                <viewController id="kT8-Iv-dUs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5z3-Se-n9R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hCu-6b-lit"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ma3-Nb-912" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2810" y="-200"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cQ2-mn-2wT">

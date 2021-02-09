@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-
-
 extension UIColor {
     
     // Setup custom colours we can use throughout the app using hex values

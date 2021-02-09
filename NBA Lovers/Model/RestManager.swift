@@ -1,10 +1,6 @@
-
 import Foundation
 
 class RestManager {
-    
-
-    
     var baseURLString = "https://free-nba.p.rapidapi.com/"
     var requestHttpHeaders = RestEntity()
     var urlQueryParameters = RestEntity()

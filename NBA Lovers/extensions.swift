@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UINavigationController {
+    //change the status bar tint
     func setStatusBar(backgroundColor: UIColor) {
         let statusBarFrame: CGRect
         if #available(iOS 13.0, *) {
@@ -21,6 +22,7 @@ extension UINavigationController {
         view.addSubview(statusBarView)
     }
 }
+//print json for debug 
 extension Data{
     func printJSON(){
         if let JSONString = String(data: self, encoding: String.Encoding.utf8){

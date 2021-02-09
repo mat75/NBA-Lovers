@@ -18,44 +18,45 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XvI-tf-bo3" userLabel="conteningView">
-                        <rect key="frame" x="10" y="8" width="300" height="88"/>
+                        <rect key="frame" x="8" y="4" width="304" height="97"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amir Johnson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNB-3r-vf6">
-                                <rect key="frame" x="8" y="5" width="280" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C-F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtF-28-SiQ">
+                                <rect key="frame" x="247" y="30" width="48" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="Okb-1u-7gK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C-F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtF-28-SiQ">
-                                <rect key="frame" x="8" y="59" width="146" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="Gxj-o5-udy"/>
-                                    <constraint firstAttribute="height" constant="21" id="iwE-gz-S6g"/>
+                                    <constraint firstAttribute="width" constant="48" id="FyA-eZ-tLp"/>
+                                    <constraint firstAttribute="height" constant="48" id="LU7-vI-h5k"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amir Johnson" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNB-3r-vf6">
+                                <rect key="frame" x="8" y="8" width="236" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="FEQ-Ac-FyZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="GtF-28-SiQ" firstAttribute="top" secondItem="sNB-3r-vf6" secondAttribute="bottom" constant="26" id="332-Jh-fFK"/>
-                            <constraint firstItem="sNB-3r-vf6" firstAttribute="top" secondItem="XvI-tf-bo3" secondAttribute="top" constant="5" id="Cn5-kd-jiG"/>
-                            <constraint firstItem="sNB-3r-vf6" firstAttribute="leading" secondItem="XvI-tf-bo3" secondAttribute="leading" constant="8" id="L8Z-KR-dN9"/>
-                            <constraint firstItem="GtF-28-SiQ" firstAttribute="leading" secondItem="XvI-tf-bo3" secondAttribute="leading" constant="8" id="UUi-nR-CX7"/>
-                            <constraint firstAttribute="trailing" secondItem="sNB-3r-vf6" secondAttribute="trailing" constant="12" id="bYr-2v-ikp"/>
-                            <constraint firstAttribute="bottom" secondItem="GtF-28-SiQ" secondAttribute="bottom" constant="8" id="tzK-l3-xBS"/>
+                            <constraint firstItem="GtF-28-SiQ" firstAttribute="top" secondItem="XvI-tf-bo3" secondAttribute="top" constant="30" id="45W-Dy-6hX"/>
+                            <constraint firstAttribute="bottom" secondItem="sNB-3r-vf6" secondAttribute="bottom" constant="8" id="6z4-Sj-X46"/>
+                            <constraint firstItem="sNB-3r-vf6" firstAttribute="top" secondItem="XvI-tf-bo3" secondAttribute="top" constant="8" id="7HC-8g-CAJ"/>
+                            <constraint firstItem="sNB-3r-vf6" firstAttribute="leading" secondItem="XvI-tf-bo3" secondAttribute="leading" constant="8" id="Iye-M0-HkC"/>
+                            <constraint firstAttribute="bottom" secondItem="GtF-28-SiQ" secondAttribute="bottom" constant="19" id="cP7-Dv-Rlo"/>
+                            <constraint firstAttribute="trailing" secondItem="GtF-28-SiQ" secondAttribute="trailing" constant="9" id="k5f-U9-xO6"/>
+                            <constraint firstItem="GtF-28-SiQ" firstAttribute="leading" secondItem="sNB-3r-vf6" secondAttribute="trailing" constant="3" id="zG2-5h-Gu6"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="XvI-tf-bo3" firstAttribute="top" secondItem="N6z-1z-ka0" secondAttribute="top" constant="8" id="0fG-o6-olK"/>
-                    <constraint firstAttribute="trailing" secondItem="XvI-tf-bo3" secondAttribute="trailing" constant="10" id="NHe-50-hw9"/>
-                    <constraint firstItem="XvI-tf-bo3" firstAttribute="leading" secondItem="N6z-1z-ka0" secondAttribute="leading" constant="10" id="Zrp-DP-gRE"/>
-                    <constraint firstAttribute="bottom" secondItem="XvI-tf-bo3" secondAttribute="bottom" constant="9" id="x8L-W0-JBj"/>
+                    <constraint firstItem="XvI-tf-bo3" firstAttribute="leading" secondItem="N6z-1z-ka0" secondAttribute="leading" constant="8" id="O2c-J0-isw"/>
+                    <constraint firstAttribute="bottom" secondItem="XvI-tf-bo3" secondAttribute="bottom" constant="4" id="Yqh-X1-eR1"/>
+                    <constraint firstAttribute="trailing" secondItem="XvI-tf-bo3" secondAttribute="trailing" constant="8" id="lXh-9l-rPR"/>
+                    <constraint firstItem="XvI-tf-bo3" firstAttribute="top" secondItem="N6z-1z-ka0" secondAttribute="top" constant="4" id="zUI-B5-Yhh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="eeK-C4-u9J"/>
@@ -64,7 +65,7 @@
                 <outlet property="playerNameLabel" destination="sNB-3r-vf6" id="6Lz-7w-f0U"/>
                 <outlet property="playerPositionLabel" destination="GtF-28-SiQ" id="zg2-Ie-wh5"/>
             </connections>
-            <point key="canvasLocation" x="16" y="59"/>
+            <point key="canvasLocation" x="15.942028985507248" y="58.59375"/>
         </tableViewCell>
     </objects>
     <resources>

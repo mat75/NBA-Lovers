@@ -1,12 +1,5 @@
-//
-//  Constants.swift
-//  Flash Chat iOS13
-//
-//  Created by mattia mauceri on 31/01/2021.
-//  Copyright © 2021 Angela Yu. All rights reserved.
-//
 
-
+//constants for NBA Lovers
 struct K {
     static let appName = "NBA Lovers"
     static let teamcellIdentifier = "teamReusableCell"
