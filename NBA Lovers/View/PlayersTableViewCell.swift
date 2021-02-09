@@ -16,6 +16,7 @@ class PlayersTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .dirtyWhite
+        self.playerNameLabel.textColor = .nbaDarkGray
         self.playerPositionLabel.layer.cornerRadius = 24
 
 

@@ -12,15 +12,18 @@ class PlayersListViewController: UIViewController {
     var team:Team?
     var playersArray = [Player]()
     @IBOutlet var tableView: CustomTableView!
+    var selectedPlayer:Player?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = team?.name
+        self.tableView.refreshIndicator.addTarget(self, action: #selector(loadPlayers), for: .valueChanged)
+
         setupTableView()
     }
     
     //load all teams from API
-    func loadPlayers(){
+    @objc func loadPlayers(){
         self.tableView.activityIndicator.startAnimating()
         self.tableView.messageLabel.text = "Loading players..."
         RapidApi.shared.loadPlayersData { (error, playerData) in
@@ -32,15 +35,17 @@ class PlayersListViewController: UIViewController {
                             DispatchQueue.main.async {
                                 self.playersArray = players
                                 self.tableView.activityIndicator.stopAnimating()
+                                self.tableView.refreshIndicator.endRefreshing()
+
                                 self.tableView.reloadData()
                             }
                         }else{
-                            print(error?.localizedDescription)
+                            print(error!.localizedDescription)
                         }
                     }
                 }
             }else{
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
             }
         }
     }
@@ -92,24 +97,18 @@ extension PlayersListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
            return 40
        }
-    
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let player = self.playersArray[indexPath.row]
-        let alert = UIAlertController(title: "\(player.first_name!) \(player.last_name!)", message: "\(player.team?.full_name) \(player.id)", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        self.selectedPlayer = self.playersArray[indexPath.row]
+        self.performSegue(withIdentifier: K.SegueIdentifier.playerSegue, sender: self)
     }
     
-    //        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //            if segue.identifier == K.SegueIdentifier.toTeamDetails {
-    //                if let controller = segue.destination as? PlayersListViewController {
-    //                    controller.team = self.selectedTeam
-    //                }
-    //            }
-    //        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.SegueIdentifier.playerSegue {
+            if let controller = segue.destination as? PlayersInfoViewController {
+                controller.player = self.selectedPlayer
+            }
+        }
+    }
 }
 

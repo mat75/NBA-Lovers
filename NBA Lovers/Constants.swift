@@ -9,6 +9,7 @@ struct K {
     
     struct SegueIdentifier {
         static let toTeamDetails = "teamSegue"
+        static let playerSegue = "playerSegue"
     }
 }
 

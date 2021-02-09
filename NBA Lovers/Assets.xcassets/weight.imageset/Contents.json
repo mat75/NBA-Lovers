@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "industrial_scales-1.png",
+      "filename" : "icons8-scale-50.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "industrial_scales.png",
+      "filename" : "icons8-scale-100.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

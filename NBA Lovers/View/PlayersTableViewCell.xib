@@ -30,8 +30,8 @@
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amir Johnson" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNB-3r-vf6">
-                                <rect key="frame" x="8" y="8" width="236" height="81"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amir Johnson" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNB-3r-vf6">
+                                <rect key="frame" x="12" y="8" width="232" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="FEQ-Ac-FyZ"/>
                                 </constraints>
@@ -45,7 +45,7 @@
                             <constraint firstItem="GtF-28-SiQ" firstAttribute="top" secondItem="XvI-tf-bo3" secondAttribute="top" constant="30" id="45W-Dy-6hX"/>
                             <constraint firstAttribute="bottom" secondItem="sNB-3r-vf6" secondAttribute="bottom" constant="8" id="6z4-Sj-X46"/>
                             <constraint firstItem="sNB-3r-vf6" firstAttribute="top" secondItem="XvI-tf-bo3" secondAttribute="top" constant="8" id="7HC-8g-CAJ"/>
-                            <constraint firstItem="sNB-3r-vf6" firstAttribute="leading" secondItem="XvI-tf-bo3" secondAttribute="leading" constant="8" id="Iye-M0-HkC"/>
+                            <constraint firstItem="sNB-3r-vf6" firstAttribute="leading" secondItem="XvI-tf-bo3" secondAttribute="leading" constant="12" id="Iye-M0-HkC"/>
                             <constraint firstAttribute="bottom" secondItem="GtF-28-SiQ" secondAttribute="bottom" constant="19" id="cP7-Dv-Rlo"/>
                             <constraint firstAttribute="trailing" secondItem="GtF-28-SiQ" secondAttribute="trailing" constant="9" id="k5f-U9-xO6"/>
                             <constraint firstItem="GtF-28-SiQ" firstAttribute="leading" secondItem="sNB-3r-vf6" secondAttribute="trailing" constant="3" id="zG2-5h-Gu6"/>

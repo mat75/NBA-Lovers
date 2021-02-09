@@ -12,6 +12,8 @@ import UIKit
 extension UIColor {
     
     // Setup custom colours we can use throughout the app using hex values
+    static let nbaDarkGray = UIColor(red:110, green: 122, blue: 143)
+    static let nbaBlack = UIColor(red: 48, green: 50, blue: 49)
     static let dirtyWhite = UIColor(red: 248, green: 248, blue: 248)
     static let transparentBlack = UIColor(hex: 0x000000, a: 0.5)
     

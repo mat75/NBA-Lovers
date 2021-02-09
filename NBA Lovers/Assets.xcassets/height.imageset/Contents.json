@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "ruler.png",
+      "filename" : "icons8-height-50.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ruler-1.png",
+      "filename" : "icons8-height-100.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

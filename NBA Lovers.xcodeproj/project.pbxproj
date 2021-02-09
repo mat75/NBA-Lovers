@@ -32,6 +32,7 @@
 		0612C05E25D2730200226F23 /* PlayersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0612C05C25D2730200226F23 /* PlayersTableViewCell.xib */; };
 		0612C06625D2B30000226F23 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C06525D2B2FF00226F23 /* CustomTableView.swift */; };
 		0612C06E25D2C67400226F23 /* CustomTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C06D25D2C67400226F23 /* CustomTableViewHeaderFooterView.swift */; };
+		0612C07925D2DB6300226F23 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C07825D2DB6200226F23 /* PlayerDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		0612C05C25D2730200226F23 /* PlayersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayersTableViewCell.xib; sourceTree = "<group>"; };
 		0612C06525D2B2FF00226F23 /* CustomTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		0612C06D25D2C67400226F23 /* CustomTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		0612C07825D2DB6200226F23 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				0612C02825D1E55000226F23 /* TeamTableViewCell.xib */,
 				0612C05B25D2730200226F23 /* PlayersTableViewCell.swift */,
 				0612C05C25D2730200226F23 /* PlayersTableViewCell.xib */,
+				0612C07825D2DB6200226F23 /* PlayerDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0612C07925D2DB6300226F23 /* PlayerDetailsView.swift in Sources */,
 				0612C04525D2010E00226F23 /* Team.swift in Sources */,
 				0612BFCD25D1D1E400226F23 /* AppDelegate.swift in Sources */,
 				0612C03725D1EF5800226F23 /* Colors.swift in Sources */,
