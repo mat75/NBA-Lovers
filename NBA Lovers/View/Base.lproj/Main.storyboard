@@ -13,15 +13,15 @@
             <objects>
                 <viewController id="fFs-Dy-K4G" customClass="TeamsViewController" customModule="NBA_Lovers" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kFL-cQ-erb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2pr-k8-d6O">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="fFs-Dy-K4G" id="BFj-MT-pRt"/>
-                                    <outlet property="delegate" destination="fFs-Dy-K4G" id="w0f-7h-q20"/>
+                                    <outlet property="delegate" destination="fFs-Dy-K4G" id="UNW-nZ-fCM"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -37,21 +37,71 @@
                     <navigationItem key="navigationItem" title="Teams" id="pi5-Ag-QAi"/>
                     <connections>
                         <outlet property="tableView" destination="2pr-k8-d6O" id="sEM-ju-Wxi"/>
+                        <segue destination="b38-f2-grV" kind="show" identifier="teamSegue" id="iaR-KU-iVW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYf-yY-1oT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1202.8985507246377" y="-199.55357142857142"/>
         </scene>
+        <!--Players List View Controller-->
+        <scene sceneID="sfQ-rm-WdT">
+            <objects>
+                <viewController id="b38-f2-grV" customClass="PlayersListViewController" customModule="NBA_Lovers" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mh5-jx-Yr7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CL-Jg-Mqg">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="222"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="222" id="Zf3-Ur-T2M"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yfv-5C-oDc">
+                                <rect key="frame" x="0.0" y="220" width="414" height="536"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="b38-f2-grV" id="zMx-So-F8o"/>
+                                    <outlet property="delegate" destination="b38-f2-grV" id="7Gz-mv-IZG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NPn-rd-2iD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yfv-5C-oDc" firstAttribute="top" secondItem="mh5-jx-Yr7" secondAttribute="top" constant="220" id="1C7-0A-dbK"/>
+                            <constraint firstItem="4CL-Jg-Mqg" firstAttribute="trailing" secondItem="yfv-5C-oDc" secondAttribute="trailing" id="O60-DH-D0m"/>
+                            <constraint firstItem="yfv-5C-oDc" firstAttribute="trailing" secondItem="NPn-rd-2iD" secondAttribute="trailing" id="RHo-Nu-rKf"/>
+                            <constraint firstItem="yfv-5C-oDc" firstAttribute="leading" secondItem="NPn-rd-2iD" secondAttribute="leading" id="SVj-NM-3ie"/>
+                            <constraint firstItem="4CL-Jg-Mqg" firstAttribute="top" secondItem="NPn-rd-2iD" secondAttribute="top" id="euz-Yn-opn"/>
+                            <constraint firstItem="4CL-Jg-Mqg" firstAttribute="leading" secondItem="NPn-rd-2iD" secondAttribute="leading" id="foS-1Q-fbu"/>
+                            <constraint firstAttribute="bottom" secondItem="yfv-5C-oDc" secondAttribute="bottom" id="oGO-Ju-tIb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3yZ-IU-T4I"/>
+                    <connections>
+                        <outlet property="tableView" destination="yfv-5C-oDc" id="chw-ll-sdq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wql-Im-gyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1960.8695652173915" y="-200.22321428571428"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cQ2-mn-2wT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nYM-Ij-be3" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Ay2-Yo-biO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="Ay2-Yo-biO">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="systemIndigoColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

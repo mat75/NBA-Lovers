@@ -8,10 +8,10 @@
 import Foundation
 
 struct Teamsdata:Decodable {
-    var teams : [Teams]
+    var data : [Team]
 }
 
-struct Teams:Decodable {
+struct Team:Decodable {
     var id : Int?
     var abbreviation : String?
     var city : String?

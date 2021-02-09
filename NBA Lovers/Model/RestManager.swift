@@ -3,12 +3,9 @@ import Foundation
 
 class RestManager {
     
-    let headers = [
-        "x-rapidapi-key": "18b10a868bmsh5dcca7c677df398p1d0622jsn48b8b3476537",
-        "x-rapidapi-host": "free-nba.p.rapidapi.com"
-    ]
+
     
-    var baseURLString = ""
+    var baseURLString = "https://free-nba.p.rapidapi.com/"
     var requestHttpHeaders = RestEntity()
     var urlQueryParameters = RestEntity()
     var httpBodyParameters = RestEntity()
@@ -126,8 +123,6 @@ extension RestManager {
         var response: URLResponse?
         var httpStatusCode: Int = 0
         var headers = RestEntity()
-        
-        
         
         init(fromURLResponse response: URLResponse?) {
             guard let response = response else { return }

@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension UINavigationController {
-
     func setStatusBar(backgroundColor: UIColor) {
         let statusBarFrame: CGRect
         if #available(iOS 13.0, *) {
@@ -20,6 +19,13 @@ extension UINavigationController {
         let statusBarView = UIView(frame: statusBarFrame)
         statusBarView.backgroundColor = backgroundColor
         view.addSubview(statusBarView)
+    }
+}
+extension Data{
+    func printJSON(){
+        if let JSONString = String(data: self, encoding: String.Encoding.utf8){
+            print(JSONString)
+        }
     }
 }
 

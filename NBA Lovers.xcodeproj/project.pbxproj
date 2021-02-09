@@ -24,7 +24,12 @@
 		0612C02A25D1E55000226F23 /* TeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0612C02825D1E55000226F23 /* TeamTableViewCell.xib */; };
 		0612C02F25D1EC9000226F23 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C02E25D1EC9000226F23 /* extensions.swift */; };
 		0612C03725D1EF5800226F23 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C03625D1EF5800226F23 /* Colors.swift */; };
-		0612C04525D2010E00226F23 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C04425D2010E00226F23 /* Teams.swift */; };
+		0612C04525D2010E00226F23 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C04425D2010E00226F23 /* Team.swift */; };
+		0612C04A25D2034900226F23 /* RapidApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C04925D2034900226F23 /* RapidApi.swift */; };
+		0612C04F25D267D900226F23 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C04E25D267D900226F23 /* Player.swift */; };
+		0612C05725D2721900226F23 /* TeamsTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C05625D2721900226F23 /* TeamsTopView.swift */; };
+		0612C05D25D2730200226F23 /* PlayersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612C05B25D2730200226F23 /* PlayersTableViewCell.swift */; };
+		0612C05E25D2730200226F23 /* PlayersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0612C05C25D2730200226F23 /* PlayersTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +73,12 @@
 		0612C02825D1E55000226F23 /* TeamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamTableViewCell.xib; sourceTree = "<group>"; };
 		0612C02E25D1EC9000226F23 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		0612C03625D1EF5800226F23 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		0612C04425D2010E00226F23 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
+		0612C04425D2010E00226F23 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		0612C04925D2034900226F23 /* RapidApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidApi.swift; sourceTree = "<group>"; };
+		0612C04E25D267D900226F23 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		0612C05625D2721900226F23 /* TeamsTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTopView.swift; sourceTree = "<group>"; };
+		0612C05B25D2730200226F23 /* PlayersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewCell.swift; sourceTree = "<group>"; };
+		0612C05C25D2730200226F23 /* PlayersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayersTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,9 +176,12 @@
 			isa = PBXGroup;
 			children = (
 				0612BFD225D1D1E400226F23 /* Main.storyboard */,
+				0612C05625D2721900226F23 /* TeamsTopView.swift */,
 				0612BFDA25D1D1E700226F23 /* LaunchScreen.storyboard */,
 				0612C02725D1E55000226F23 /* TeamTableViewCell.swift */,
 				0612C02825D1E55000226F23 /* TeamTableViewCell.xib */,
+				0612C05B25D2730200226F23 /* PlayersTableViewCell.swift */,
+				0612C05C25D2730200226F23 /* PlayersTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,7 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				0612C02225D1DCEF00226F23 /* RestManager.swift */,
-				0612C04425D2010E00226F23 /* Teams.swift */,
+				0612C04925D2034900226F23 /* RapidApi.swift */,
+				0612C04425D2010E00226F23 /* Team.swift */,
+				0612C04E25D267D900226F23 /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0612C05E25D2730200226F23 /* PlayersTableViewCell.xib in Resources */,
 				0612C02A25D1E55000226F23 /* TeamTableViewCell.xib in Resources */,
 				0612BFDC25D1D1E700226F23 /* LaunchScreen.storyboard in Resources */,
 				0612BFD925D1D1E700226F23 /* Assets.xcassets in Resources */,
@@ -313,16 +329,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0612C04525D2010E00226F23 /* Teams.swift in Sources */,
+				0612C04525D2010E00226F23 /* Team.swift in Sources */,
 				0612BFCD25D1D1E400226F23 /* AppDelegate.swift in Sources */,
 				0612C03725D1EF5800226F23 /* Colors.swift in Sources */,
 				0612C01925D1DC8000226F23 /* PlayersInfoViewController.swift in Sources */,
+				0612C04F25D267D900226F23 /* Player.swift in Sources */,
+				0612C05725D2721900226F23 /* TeamsTopView.swift in Sources */,
 				0612C01425D1DC7400226F23 /* PlayersListViewController.swift in Sources */,
 				0612C00C25D1DC4400226F23 /* TeamsViewController.swift in Sources */,
+				0612C05D25D2730200226F23 /* PlayersTableViewCell.swift in Sources */,
 				0612C01E25D1DCE100226F23 /* Constants.swift in Sources */,
 				0612C02F25D1EC9000226F23 /* extensions.swift in Sources */,
 				0612C02325D1DCEF00226F23 /* RestManager.swift in Sources */,
 				0612BFD725D1D1E400226F23 /* NBA_Lovers.xcdatamodeld in Sources */,
+				0612C04A25D2034900226F23 /* RapidApi.swift in Sources */,
 				0612C02925D1E55000226F23 /* TeamTableViewCell.swift in Sources */,
 				0612BFCF25D1D1E400226F23 /* SceneDelegate.swift in Sources */,
 			);

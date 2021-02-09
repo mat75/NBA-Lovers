@@ -11,5 +11,6 @@ class PlayersInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
     }
 }

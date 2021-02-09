@@ -1,21 +1,18 @@
 //
-//  TeamTableViewCell.swift
+//  PlayersTableViewCell.swift
 //  NBA Lovers
 //
-//  Created by mattia mauceri on 08/02/2021.
+//  Created by mattia mauceri on 09/02/2021.
 //
 
 import UIKit
 
-class TeamTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var teamFullNameLabel: UILabel!
-    @IBOutlet weak var teamAbbreviationLabel: UILabel!
-    @IBOutlet weak var teamDivisionLabel: UILabel!
-    @IBOutlet weak var teamCityLabel: UILabel!
-    var team : Team?
-    
+class PlayersTableViewCell: UITableViewCell {
+    @IBOutlet weak var playerNameLabel: UILabel!
+    @IBOutlet weak var playerPositionLabel: UILabel!
+
     @IBOutlet weak var conteiningView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .dirtyWhite
@@ -34,18 +31,12 @@ class TeamTableViewCell: UITableViewCell {
         self.conteiningView.layer.shadowPath = shadowPath.cgPath
     }
     
-    func setupTeam(team:Team){
-        if let fullName = team.full_name {
-            self.teamFullNameLabel.text = fullName
+    func setupPlayer(player:Player){
+        if let fullName = player.first_name, let lastName = player.last_name  {
+            self.playerNameLabel.text = "\(fullName) \(lastName)"
         }
-        if let abbreviation = team.abbreviation {
-            self.teamAbbreviationLabel.text = abbreviation
+        if let position = player.position {
+            self.playerPositionLabel.text = position
         }
-        if let division = team.division {
-            self.teamDivisionLabel.text = "\(division) division"
-        }
-        if let teamCity = team.city {
-            self.teamCityLabel.text = teamCity
-        }
-    }    
+    }
 }
