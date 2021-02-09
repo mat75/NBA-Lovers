@@ -12,6 +12,8 @@ class PlayersListViewController: UIViewController {
     var playersArray = [Player]()
     @IBOutlet var tableView: UITableView!
     var selectedPlayer:Player?
+    
+    @IBOutlet weak var teamsTopView: TeamsTopView!
     var activityIndicator:UIActivityIndicatorView = {
         let ai = UIActivityIndicatorView()
         ai.translatesAutoresizingMaskIntoConstraints = false
@@ -22,7 +24,14 @@ class PlayersListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = team?.name
+        self.navigationItem.title = team?.name?.uppercased()
+        if let city = team?.city {
+            self.teamsTopView.cityTeam.text = city.uppercased()
+        }
+        if let division = team?.division {
+            self.teamsTopView.teamConference.text = "\(division) division"
+        }
+    
         setupTableView()
     }
     

@@ -13,7 +13,6 @@ class RapidApi: NSObject {
         "x-rapidapi-key": "18b10a868bmsh5dcca7c677df398p1d0622jsn48b8b3476537",
         "x-rapidapi-host": "free-nba.p.rapidapi.com"
     ]
-    
     //SINGLENTON for RapidApi
     static let shared = RapidApi()
     
@@ -77,7 +76,6 @@ class RapidApi: NSObject {
             //added semaphore and backgroundQueue to manage multiple api calls
             let backgroundQueue = DispatchQueue(label: "requests")
             let semaphore = DispatchSemaphore(value: 1)
-
             backgroundQueue.async {
                 for page in 1..<playerData!.meta.total_pages! {
                     semaphore.wait()
@@ -100,4 +98,5 @@ class RapidApi: NSObject {
         }
     }
 
+    
 }

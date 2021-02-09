@@ -21,6 +21,11 @@ class TeamsViewController: UIViewController {
         loadTeams()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tableView.refreshIndicator.endRefreshing()
+    }
+    
     //load all teams from API
     @objc func loadTeams(){
         self.tableView.activityIndicator.startAnimating()

@@ -77,16 +77,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CL-Jg-Mqg" customClass="TeamsTopView" customModule="NBA_Lovers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="146"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOSTON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpH-gu-pOe">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOSTON" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpH-gu-pOe">
                                         <rect key="frame" x="21" y="17" width="372" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="SUD-0Y-8CJ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="West Conference" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-JT-mGO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="West Conference" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkj-JT-mGO">
                                         <rect key="frame" x="21" y="75" width="372" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="Cvd-Fn-bbZ"/>
@@ -135,6 +135,7 @@
                     <navigationItem key="navigationItem" id="3yZ-IU-T4I"/>
                     <connections>
                         <outlet property="tableView" destination="yfv-5C-oDc" id="chw-ll-sdq"/>
+                        <outlet property="teamsTopView" destination="4CL-Jg-Mqg" id="1Kg-Ia-gFT"/>
                         <segue destination="kT8-Iv-dUs" kind="presentation" identifier="playerSegue" id="0Qa-LJ-qf5"/>
                     </connections>
                 </viewController>
