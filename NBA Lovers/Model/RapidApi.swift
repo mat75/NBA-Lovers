@@ -10,7 +10,7 @@ class RapidApi: NSObject {
     
     //API headers
     let headers = [
-        "x-rapidapi-key": "18b10a868bmsh5dcca7c677df398p1d0622jsn48b8b3476537",
+        "x-rapidapi-key": "****TO-BE-SET******",
         "x-rapidapi-host": "free-nba.p.rapidapi.com"
     ]
     //SINGLENTON for RapidApi
